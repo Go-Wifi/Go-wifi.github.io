@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  background-color: #ddd;
+}
+nav {
+  display: flex;
+  background-color: rgb(55, 179, 117);
+  justify-content: space-around;
+  padding: 20px 0;
+  color: rgb(141, 226, 184);
+}
+nav .logo {
+  font-family: "Pacifico", cursive;
+  letter-spacing: 5px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  justify-content: space-between;
+}
+nav ul li a {
+  text-decoration: none;
+  color: rgb(141, 226, 184);
+  font-size: 0, 6em;
+  font-family: "Montserrat", sans-serif;
+}
+nav ul li a:hover {
+  color: rgb(255, 255, 255);
+}
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+}
+.hamburger span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(141, 226, 184);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.ipo-chan {
+  margin: 20px auto;
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.image {
+  width: 32%;
+  margin: 5px;
+}
+.image img {
+  width: 100%;
+}
+.image-foot {
+  width: 45%;
+}
+.ipo-chan-Mobile {
+  display: none;
+}
+
+/* responsive Breakpoint */
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+}
+
+/* Ukuran Mobile */
+@media screen and (max-width: 576px) {
+  .hamburger {
+    display: flex;
+    cursor: pointer;
+  }
+  nav {
+    overflow-x: hidden;
+  }
+  nav ul {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100vh;
+    flex-direction: column;
+    width: 80%;
+    text-align: center;
+    transition: 0.3s;
+    justify-content: space-evenly;
+    background-image: url(img/Ipo-Chan-5.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  nav ul li a {
+    color: black;
+    font-size: 1.1em;
+    font-family: "Montserrat", sans-serif;
+    background-color: rgba(255, 251, 251, 0.72);
+    border-radius: 5px;
+  }
+  nav ul.active {
+    right: 0;
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform-origin: 0 0;
+  }
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-10px, 9px);
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-3px, -1px);
+  }
+
+  .ipo-chan {
+    display: none;
+  }
+  .ipo-chan-Mobile {
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .image {
+    width: 47%;
+    margin: 5px auto;
+  }
+  .image img {
+    margin: 10px 0;
+    width: 100%;
+  }
+  .image-foot {
+    margin: 60px 0;
+    box-sizing: border-box;
+    width: 95%;
+  }
+}
